@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'twitter',
     'twitter.notify',
     'twitter.tweet',
     'twitter.user',
@@ -124,5 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 TEMPLATE_DIRS = [
-    BASE_DIR + '/templates/'
+    BASE_DIR + '/twitter/templates/',
 ]
+
+print(TEMPLATE_DIRS)
