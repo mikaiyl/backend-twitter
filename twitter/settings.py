@@ -29,10 +29,15 @@ ALLOWED_HOSTS = [
     'localhost'
 ]
 
+INTERNAL_IPS = [
+    '127.0.0.1'
+]
 
 # Application definition
 
 INSTALLED_APPS = [
+    'coverage',
+    'debug_toolbar',
     'twitter',
     'twitter.notify',
     'twitter.tweet',
@@ -46,6 +51,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -127,5 +133,3 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = [
     BASE_DIR + '/twitter/templates/',
 ]
-
-print(TEMPLATE_DIRS)

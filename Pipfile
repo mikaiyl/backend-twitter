@@ -7,6 +7,9 @@ verify_ssl = true
 
 [packages]
 django = "*"
+coverage = "==3.6"
+django-debug-toolbar = "*"
+selenium = "*"
 
 [requires]
 python_version = "3.7"
