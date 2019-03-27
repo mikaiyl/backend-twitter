@@ -1,10 +1,21 @@
 from django import forms
-from .models import TwitterUser
+from .models import User, TwitterUser
 
 
-class Login(forms.Form):
-    pass
+class CreateUserForm(forms.ModelForm):
+
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta:
+        model = User
+        fields = [
+            'username',
+            'email',
+            'password']
 
 
-class Signup(forms.Form):
-    pass
+class CreateTwitterUserForm(forms.ModelForm):
+
+    class Meta:
+        model = TwitterUser
+        fields = ['user']

@@ -1,9 +1,5 @@
-{% extends 'main.html' %}
-
-{% block auth %}
 <form action="/accounts/login" method="post">
 	{% csrf_token %}
 	{{ form.as_p }}
 	<button type="submit">Login</button>
 </form>
-{% endblock %}

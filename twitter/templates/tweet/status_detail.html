@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+<div class="jumbotron">
+	<h1 class="display-4">{{ tweet.user.user.username }}</h1>
+	<p class="lead">{{ tweet.body }}</p>
+	<hr class="my-4">
+	<p>{{ tweet.timestamp }}</p>
+</div>

@@ -37,6 +37,7 @@ INTERNAL_IPS = [
 
 INSTALLED_APPS = [
     'coverage',
+    'crispy_forms',
     'debug_toolbar',
     'twitter',
     'twitter.notify',
@@ -133,3 +134,5 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = [
     BASE_DIR + '/twitter/templates/',
 ]
+
+CRISPY_TEMPLATE_PACK = 'uni_form'

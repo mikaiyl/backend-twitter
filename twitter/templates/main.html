@@ -4,6 +4,8 @@
 
 <div class="container">
 	<div class="row">
+		{% if user.is_authenticated %}
+		{% else %}
 		<div class="col-lg-5">
 			<p>Lorem Ipsum</p>
 		</div>
@@ -11,6 +13,7 @@
 			{% block auth %}
 			{% endblock %}
 		</div>
+		{% endif %}
 	</div>
 </div>
 

@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+
+{% block auth %}
+<form action="" method="POST">
+	{% include 'form.html' %}
+    <div class="form-actions">
+        <input type="submit" name="submit" value="Save" class="btn btn-primary" id="submit-save">
+    </div>
+</form>
+{% endblock %}

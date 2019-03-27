@@ -18,15 +18,15 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 
-from notify import urls as n_urls
-from tweet import urls as t_urls
-from user import urls as u_urls
+from .notify import urls as n_urls
+from .tweet import urls as t_urls
+from .user import urls as u_urls
 
 urlpatterns = [
-    path('', views.main.as_view()),
+    path('', views.main.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-] + n_urls + t_urls + u_urls
+] + u_urls.urls + n_urls.urls + t_urls.urls
 
 if settings.DEBUG:
     import debug_toolbar
