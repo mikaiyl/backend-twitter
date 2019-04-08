@@ -29,10 +29,16 @@ ALLOWED_HOSTS = [
     'localhost'
 ]
 
+INTERNAL_IPS = [
+    '127.0.0.1'
+]
 
 # Application definition
 
 INSTALLED_APPS = [
+    'coverage',
+    'crispy_forms',
+    'debug_toolbar',
     'twitter',
     'twitter.notify',
     'twitter.tweet',
@@ -46,6 +52,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -122,10 +129,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
+APPEND_SLASH = True
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/feed/'
+LOGOUT_REDIRECT_URL = '/'
 
 STATIC_URL = '/static/'
+
 TEMPLATE_DIRS = [
     BASE_DIR + '/twitter/templates/',
 ]
-
-print(TEMPLATE_DIRS)

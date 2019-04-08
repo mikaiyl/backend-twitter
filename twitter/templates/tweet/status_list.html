@@ -1,0 +1,22 @@
+{% extends 'tweet/base.html' %}
+
+{% block tweets %}
+<div class="col-4">
+	{% for tweet in status_feed %}
+	<ul class="list-group">
+		<li class="list-group-item">
+			<div class='row d-flex justify-content-between'>
+				<h6>{{ tweet.user.user.username }}</h6>
+				<a href='/tweet/{{ tweet.id }}'><small>{{ tweet.timestamp }}</small></a>
+			</div>
+			<hr>
+			<blockquote>
+				<p class="mb-0">
+					{{ tweet.body }}
+				</p>
+			</blockquote>
+		</li>
+	</ul>
+	{% endfor %}
+</div>
+{% endblock %}
