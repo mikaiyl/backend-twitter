@@ -2,16 +2,15 @@
 
 {% block content %}
 
-<div class="container">
-	<div class="row">
+<div class="container" style="height: 90vh; width: 100vw;">
+	<div class="row" style="height: 100%;">
 		{% if user.is_authenticated %}
 		{% else %}
-		<div class="col-lg-5">
+		<div class="col-5">
 			<p>Lorem Ipsum</p>
 		</div>
-		<div class="col">
-			{% block auth %}
-			{% endblock %}
+		<div class="col d-flex align-items-center justify-content-center">
+			{% include 'registration/login.snip.html' %}
 		</div>
 		{% endif %}
 	</div>

@@ -1,16 +1,13 @@
-from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-from .forms import CreateUserForm
 from .models import User, TwitterUser
 
 
 # Create your views here.
 
-
 class CreateUserView(CreateView):
-    model = User
-    form_class = CreateUserForm
+    form_class = UserCreationForm
     success_url = reverse_lazy('home')
     template_name = 'registration/signup.html'
 

@@ -129,10 +129,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
+APPEND_SLASH = True
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/feed/'
+LOGOUT_REDIRECT_URL = '/'
 
 STATIC_URL = '/static/'
+
 TEMPLATE_DIRS = [
     BASE_DIR + '/twitter/templates/',
 ]
-
-CRISPY_TEMPLATE_PACK = 'uni_form'
